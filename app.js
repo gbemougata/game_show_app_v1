@@ -106,18 +106,18 @@ function checkLetter(target){
 }
 
 //missed guesses in the game
-if (ckeckLetter == null){
+if (checkLetter == null){
   const wrong=0;
   miss++;
   const letterFound =letter[i].textContent;
   miss=0;
-  if (letter[i].textContent===null){
+
     const section= document.getElementsByClassName('tries');
 letter[i].classList.remove('tries')[0];
 miss++
 
 
-  }
+
 }
 //create checkWin function
 
@@ -129,11 +129,13 @@ function checkWin(){
   if (classShow.length ===classLetter.length){
     overlay.classList.add('win');
     win++;
+    console.log(win);
   }
-} else if  {
-  (missed>==5){
+ else if
+  (missed==5){
 
     overlay.classList.add('lose');
     lose--;
+    console.log(lose);
   }
 }
