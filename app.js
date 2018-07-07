@@ -14,13 +14,13 @@ let phrases= ['moday boring','tuesday safer','wednesday blessing','thursday high
 //addEvent listener
 
 startGame.addEventListener('click', function() {
-console.log(startGame);
-if (startGame ===1){
-  console.log(overlay.style.display='hide');
-}else {
-  console.log(overlay.style.display='block');
+//console.log(startGame);
+//if (startGame ===1){
+  overlay.style.display='none';
+//}else {
+  //overlay.style.display='block';
 
-}
+//}
 });
 
 //phrases array
