@@ -1,7 +1,7 @@
 //create variables
 
 const qwerty =document.getElementById('qwerty');
-const phrase= document. getElementById('phrases');
+const phrase= document. getElementById('#phrase ul');
 const  miss= 0;
 const lives=5;
 const win=document.getElementsByClassName('win');
@@ -9,7 +9,7 @@ const lose=document.getElementsByClassName('lose');
 //const overlay = document.getElementById('overlay');
 const startGame = document.querySelector('a.btn__reset');
 const overlay = document.getElementById('overlay');
-const phrases= ['monday boring','tuesday safer','wednesday blessing','thursday high', 'friday happy.'];
+let phrases= ['monday boring','tuesday safer','wednesday blessing','thursday high', 'friday happy.'];
 
 //addEvent listener
 
@@ -27,19 +27,19 @@ startGame.addEventListener('click', function() {
 
 
 //get randomphrase array and use split methode on it.
-function getRandomPhrasesArray(){
-  var PhraseArray= Math.floor * (Math.random());
-  var newPhrasesArray=[phrasesArray.length.split()];
-  return newPhrasesArray;
+function getRandomPhrasesArray(arr){
+  var PhrasesArray= arr[(Math.floor(Math.random()*arr.lenght))];
+  var NewPhrasesArray= [PhrasesArray.split("")];
+  return NewPhrasesArray;
 }
 
-
+let newphrase=getRandomPhrasesArray(phrases);
 
 //create addPhraseToDisplay function
 
-function  addPhrasesDisplay(){
+function  addPhrasesDisplay(arr){
   //const phrasesArray=getRandomPhrasesAsArray(phrases);
-    //const caracterArr=newPhrasesArray[i];
+    const caracterArr=getNewPhrasesArray[i];
     //create list item
     let list =document.createElement('li');
     const text=document.createTexteNode('caracterArray');
