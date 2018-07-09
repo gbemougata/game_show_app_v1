@@ -1,7 +1,7 @@
 //create variables
 
 const qwerty =document.getElementById('qwerty');
-const phrase= document. getElementById('phrase');
+const phrase= document. getElementById('phrases');
 const  miss= 0;
 const lives=5;
 const win=document.getElementsByClassName('win');
@@ -27,9 +27,9 @@ startGame.addEventListener('click', function() {
 
 
 //get randomphrase array and use split methode on it.
-function getRandomPhrasesArray(arr){
+function getRandomPhrasesArray(){
   var PhraseArray= Math.floor * (Math.random());
-  var newPhrasesArray=arr[phrasesArray.length.split()];
+  var newPhrasesArray=[phrasesArray.length.split()];
   return newPhrasesArray;
 }
 
@@ -37,9 +37,9 @@ function getRandomPhrasesArray(arr){
 
 //create addPhraseToDisplay function
 
-function  addPhraseDisplay(phrases){
-  const phrasesArray=getRandomPhrasesAsArray(phrases);
-    const caracterArr=arr[i];
+function  addPhrasesDisplay(){
+  //const phrasesArray=getRandomPhrasesAsArray(phrases);
+    //const caracterArr=newPhrasesArray[i];
     //create list item
     let list =document.createElement('li');
     const text=document.createTexteNode('caracterArray');
@@ -60,7 +60,7 @@ function  addPhraseDisplay(phrases){
   };
 }
 
-  addPhraseDisplay(phrases);
+  addPhrasesDisplay(phrases);
 //create a check letter function
 function checkLetter(letter){
 for (let i=0 ; i<li.length ; i++){
