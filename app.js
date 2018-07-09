@@ -9,7 +9,7 @@ const lose=document.getElementsByClassName('lose');
 //const overlay = document.getElementById('overlay');
 const startGame = document.querySelector('a.btn__reset');
 const overlay = document.getElementById('overlay');
-let phrases= ['moday boring','tuesday safer','wednesday blessing','thursday high', 'friday happy.'];
+let phrases= ['monday boring','tuesday safer','wednesday blessing','thursday high', 'friday happy.'];
 
 //addEvent listener
 
@@ -28,16 +28,17 @@ startGame.addEventListener('click', function() {
 
 //get randomphrase array and use split methode on it.
 function getRandomPhrasesArray(arr){
-  var guessWord= arr [ Math.floor * (Math.random().length.split(""))];
-  return guessWord;
+  var PhraseArray= Math.floor * (Math.random());
+  var newPhraseArray=arr[phrasesArray.length.split()];
+  return newPhraseArray;
 }
 
 
 
 //create addPhraseToDisplay function
 
-function addPhraseDisplay(arr){
-  const phraseArray=getRandomPhraseAsArray(phrases);
+function  addPhraseDisplay(arr){
+  const phrasesArray=getRandomPhraseAsArray(arr);
     const caracterArr=arr[i];
     //create list item
     let list =document.createElement('li');
@@ -59,7 +60,7 @@ function addPhraseDisplay(arr){
   };
 }
 
-
+  addPhrasesDisplay(arr);
 //create a check letter function
 function checkLetter(letter){
 for (let i=0 ; i<li.length ; i++){
