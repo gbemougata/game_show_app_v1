@@ -9,7 +9,7 @@ const lose=document.getElementsByClassName('lose');
 //const overlay = document.getElementById('overlay');
 const startGame = document.querySelector('a.btn__reset');
 const overlay = document.getElementById('overlay');
-let phrases= ['monday boring','tuesday safer','wednesday blessing','thursday high', 'friday happy.'];
+const phrases= ['monday boring','tuesday safer','wednesday blessing','thursday high', 'friday happy.'];
 
 //addEvent listener
 
@@ -29,23 +29,23 @@ startGame.addEventListener('click', function() {
 //get randomphrase array and use split methode on it.
 function getRandomPhrasesArray(arr){
   var PhraseArray= Math.floor * (Math.random());
-  var newPhraseArray=arr[phrasesArray.length.split()];
-  return newPhraseArray;
+  var newPhrasesArray=arr[phrasesArray.length.split()];
+  return newPhrasesArray;
 }
 
 
 
 //create addPhraseToDisplay function
 
-function  addPhraseDisplay(arr){
-  const phrasesArray=getRandomPhraseAsArray(arr);
+function  addPhraseDisplay(phrases){
+  const phrasesArray=getRandomPhrasesAsArray(phrases);
     const caracterArr=arr[i];
     //create list item
     let list =document.createElement('li');
     const text=document.createTexteNode('caracterArray');
     list.appendChild(text);
     //not sure if i need to use textContent on list
-    phrases.appendChild(list);
+    phrase.appendChild(list);
 
 
 
@@ -60,7 +60,7 @@ function  addPhraseDisplay(arr){
   };
 }
 
-  addPhrasesDisplay(arr);
+  addPhraseDisplay(phrases);
 //create a check letter function
 function checkLetter(letter){
 for (let i=0 ; i<li.length ; i++){
