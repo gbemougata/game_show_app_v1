@@ -4,8 +4,7 @@ const qwerty =document.getElementById('qwerty');
 const phrase= document. querySelector('#phrase ul');
 const  miss= 0;
 const lives=5;
-const win=document.getElementsByClassName('win');
-const lose=document.getElementsByClassName('lose');
+
 //const overlay = document.getElementById('overlay');
 const startGame = document.querySelector('a.btn__reset');
 const overlay = document.getElementById('overlay');
@@ -33,7 +32,7 @@ function getRandomPhrasesArray(arr){
   return NewPhrasesArray;
 }
 
-let newphrase=getRandomPhrasesArray(phrases);
+getRandomPhrasesArray(phrases);
 
 //create addPhraseToDisplay function
 
@@ -58,9 +57,9 @@ function  addPhrasesDisplay(arr){
 
 
     if(arr[i]===''){
-      phrase.className='space';
+      phrases.className='space';
     }else {
-      phrase.className='letter';
+      phrases.className='letter';
     }
   };
 }
@@ -142,4 +141,6 @@ function checkWin(){
 
     overlay.classList.add('lose');
     lose--;
-  };
+  }
+}
+}
