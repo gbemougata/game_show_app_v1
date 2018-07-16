@@ -5,10 +5,12 @@ const phrase= document. querySelector('#phrase ul');
 const  miss= 0;
 const lives=5;
 
+
+
 //const overlay = document.getElementById('overlay');
 const startGame = document.querySelector('a.btn__reset');
 const overlay = document.getElementById('overlay');
-let phrases= ['monday boring','tuesday safer','wednesday blessing','thursday high', 'friday happy.'];
+let phrases= ['monday','tuesday','wednesday','Thursday', 'friday.'];
 
 //addEvent listener
 
@@ -27,12 +29,12 @@ startGame.addEventListener('click', function() {
 
 //get randomphrase array and use split methode on it.
 function getRandomPhrasesArray(arr){
-  var PhrasesArray= arr[(Math.floor(Math.random()*arr.length))];
-  var NewPhrasesArray= [PhrasesArray.split("")];
+  var PhrasesArray= arr[(Math.floor(Math.random() * arr.length))];
+  var NewPhrasesArray= PhrasesArray.split();
   return NewPhrasesArray;
 }
 
-getRandomPhrasesArray(phrases);
+getRandomPhrasesArray(getRandomPhrasesArray(phrases));
 
 //create addPhraseToDisplay function
 
@@ -48,6 +50,7 @@ function  addPhrasesDisplay(arr){
 
 
 
+
       for ( i=0; i< arr.length; i++){
         let list =document.createElement('li');
         list.textContent=arr[i];
@@ -55,16 +58,16 @@ function  addPhrasesDisplay(arr){
         //list.appendChild(text);
 
 
-
     if(arr[i]===''){
       phrases.className='space';
     }else {
       phrases.className='letter';
-    }
+    };
   };
-}
+};
 
-  addPhrasesDisplay(phrases);
+
+  addPhrasesDisplay(getRandomPhrasesArray(phrases));
 //create a check letter function
 function checkLetter(letter){
 for (let i=0 ; i<li.length ; i++){
@@ -80,7 +83,7 @@ else{
 //adding eventLitener to the keyboard
 
 window.onkeyup =function(e){
-  if (e.target.tagName==='button'){
+  if (e.target .tagName==='button'){
     const target= e.target;
     //const button=target;
   const keyrow=document.querySelectorAll('keyrow');
@@ -92,7 +95,7 @@ window.onkeyup =function(e){
   //window.querySelectorAll('target').disabled=true;
 
 
-checkLetter(target);
+ checkLetter(letter);
 
 
 //letter appears in a phrase
