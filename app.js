@@ -47,11 +47,13 @@ function  addPhrasesDisplay(arr){
     //not sure if i need to use textContent on list
     //list.appendChild(text);
 
-
+let array=arr[0].split('');
+console.log(array);
 
 
 
       for ( i=0; i< arr.length; i++){
+
         let list =document.createElement('li');
         list.textContent=arr[i];
         phrase.appendChild(list);
