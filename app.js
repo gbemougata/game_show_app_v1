@@ -52,7 +52,7 @@ console.log(array);
 
 
 
-      for ( i=0; i< arr.length; i++){
+      for ( i=0; i< array.length; i++){
 
         let list =document.createElement('li');
         list.textContent=arr[i];
@@ -60,7 +60,7 @@ console.log(array);
         //list.appendChild(text);
 
 
-    if(arr[i]===''){
+    if(array[i]===''){
       phrases.className='space';
     }else {
       phrases.className='letter';
