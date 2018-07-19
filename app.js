@@ -55,15 +55,15 @@ console.log(array);
       for ( i=0; i< array.length; i++){
 
         let list =document.createElement('li');
-        list.textContent=arr[i];
+        list.textContent=array[i];
         phrase.appendChild(list);
         //list.appendChild(text);
 
 
     if(array[i]===''){
-      phrases.className='space';
+      list.className='space';
     }else {
-      phrases.className='letter';
+      list.className='letter';
     };
   };
 };
