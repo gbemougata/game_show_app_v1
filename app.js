@@ -12,6 +12,7 @@ const startGame = document.querySelector('a.btn__reset');
 const overlay = document.getElementById('overlay');
 let phrases= ['monday','tuesday','wednesday','Thursday', 'friday.'];
 
+
 //addEvent listener
 
 startGame.addEventListener('click', function() {
@@ -72,15 +73,19 @@ console.log(array);
   addPhrasesDisplay(getRandomPhrasesArray(phrases));
 //create a check letter function
 function checkLetter(letter){
-for (let i=0 ; i<li.length ; i++){
-  if (checkLetter===guessLetter){
-    li[i].classList.show();
-  }
-else{
-  li[i].classList.add('null');
-}
-}
-}
+
+  for (i=0; i<letter.length; i++){
+
+
+    if(letter.textContent.ToUpperCase===guess.textContent.ToUpperCase){
+      let newPhrasesArray=document.getElementsByclassName(list)[i];
+      let att=document.createAttribute('class');
+      att.value='letter';
+      newPhrasesArray.setAttributeNode(att);
+
+      };
+    };
+  };
 
 //adding eventLitener to the keyboard
 
@@ -97,7 +102,7 @@ window.onkeyup =function(e){
   //window.querySelectorAll('target').disabled=true;
 
 
- checkLetter(letter);
+
 
 
 //letter appears in a phrase
