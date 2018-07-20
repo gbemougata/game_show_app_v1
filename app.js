@@ -72,13 +72,14 @@ console.log(array);
 
   addPhrasesDisplay(getRandomPhrasesArray(phrases));
 //create a check letter function
+
 function checkLetter(letter){
 
   for (i=0; i<letter.length; i++){
 
 
     if(letter.textContent.ToUpperCase===guess.textContent.ToUpperCase){
-      let newPhrasesArray=document.getElementsByclassName(list)[i];
+      let newPhrasesArray=document.getElementsByclassName(list)[0];
       let att=document.createAttribute('class');
       att.value='letter';
       newPhrasesArray.setAttributeNode(att);
@@ -89,14 +90,14 @@ function checkLetter(letter){
 
 //adding eventLitener to the keyboard
 
-window.onkeyup =function(e){
+qwerty.addEventListener('click',function(e)){
   if (e.target .tagName==='button'){
     const target= e.target;
     //const button=target;
   const keyrow=document.querySelectorAll('keyrow');
   window.querySelectorAll('button').disabled= false;
 
-  }
+}
   //else {
 
   //window.querySelectorAll('target').disabled=true;
