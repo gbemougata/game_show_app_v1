@@ -73,24 +73,11 @@ console.log(array);
   addPhrasesDisplay(getRandomPhrasesArray(phrases));
 //create a check letter function
 
-function checkLetter(letter){
 
-  for (i=0; i<letter.length; i++){
-
-
-    if(letter.textContent.ToUpperCase===guess.textContent.ToUpperCase){
-      let newPhrasesArray=document.getElementsByclassName(list)[0];
-      let att=document.createAttribute('class');
-      att.value='letter';
-      newPhrasesArray.setAttributeNode(att);
-
-      };
-    };
-  };
 
 //adding eventLitener to the keyboard
 
-qwerty.addEventListener('click',function(e)){
+qwerty.addEventListener('click',function(e){
   if (e.target .tagName==='button'){
     const target= e.target;
     //const button=target;
@@ -111,10 +98,10 @@ qwerty.addEventListener('click',function(e)){
 function checkLetter(target){
   const foundLetter= null;
   const letter=document.getElementsByClassName('letter');
-  const btn=target.textContent;
+  //const btn=target.textContent;
   for ( let i=0; i<letter.length; i++){
     //if matches found
-    if(letter[i].textContent.toLowerCase==btn){
+    if(letter[i].textContent.toLowerCase()==btn){
       letter[i].classList.add('show');
       const letterfound=letter[i].textContent;
     }
@@ -154,4 +141,4 @@ function checkWin(){
     lose--;
   }
 }
-}
+})
