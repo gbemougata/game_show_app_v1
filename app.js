@@ -78,13 +78,21 @@ console.log(array);
 //adding eventLitener to the keyboard
 
 qwerty.addEventListener('click',function(e){
-  if (e.target .tagName==='button'){
+  if (e.target .tagName==='BUTTON'){
     const target= e.target;
-    //const button=target;
-  const keyrow=document.querySelectorAll('keyrow');
-  window.querySelectorAll('button').disabled= false;
+    const button=target;
+//  const keyrow=document.querySelectorAll('keyrow');
+  //window.querySelectorAll('button').disabled= false;
 
+      //const button=target;
+    //const keyrow=document.querySelectorAll('keyrow');
+    //window.querySelectorAll('button').disabled= false;
+
+  checkLetter(target);
 }
+});
+
+
   //else {
 
   //window.querySelectorAll('target').disabled=true;
@@ -98,7 +106,7 @@ qwerty.addEventListener('click',function(e){
 function checkLetter(target){
   const foundLetter= null;
   const letter=document.getElementsByClassName('letter');
-  //const btn=target.textContent;
+  const btn=target.textContent;
   for ( let i=0; i<letter.length; i++){
     //if matches found
     if(letter[i].textContent.toLowerCase()==btn){
@@ -118,27 +126,23 @@ if (checkLetter == null){
     const section= document.getElementsByClassName('tries');
 letter[i].classList.remove('tries')[0];
 miss++
-
-
-
-}
+};
 //create checkWin function
+//
+//function checkWin(){
 
-function checkWin(){
 
+  //const classShow= document.getElementsByClassName('show');
+  //const classLetter=document.getElementByClass('letters');
+  //if (classShow.length ===classLetter.length){
+    //overlay.classList.add('win');
+    //win++;
+    //console.log(win);
+//  }
+//}
+ //else if
+  //(missed==5){
 
-  const classShow= document.getElementsByClassName('show');
-  const classLetter=document.getElementByClass('letters');
-  if (classShow.length ===classLetter.length){
-    overlay.classList.add('win');
-    win++;
-    console.log(win);
-  }
- else if
-  (missed==5){
-
-    overlay.classList.add('lose');
-    lose--;
-  }
-}
-})
+    //overlay.classList.add('lose');
+    //lose--;
+  //}
