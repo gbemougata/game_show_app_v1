@@ -91,36 +91,41 @@ function checkLetter(target){
 
 //missed guesses in the game
 if (checkLetter == null){
-  const wrong=0;
-  miss++;
-  const letterFound =letter[i].textContent;
-  miss=0;
+   const wrong=0;
+   console.log(wrong);
+   miss++;
+   const letterFound =letter[i].textContent;
+   miss=0;
 
-    const section= document.getElementsByClassName('tries');
-letter[i].classList.remove('tries')[0];
-miss++
-};
+     const section= document.getElementsByClassName('tries');
+ letter[i].classList.remove('tries')[0];
+ miss++
+ };
 //create checkWin function
 //
 function checkWin(win){
 
   //Checks if we lost
-  if (lives == 0) {
+  if (lives == 5) {
 
 
 var NewPhrasesArray= PhrasesArray.split();
-let win=NewPhrasesArray[i].textContent;
+//let win=NewPhrasesArray[i].textContent+1;
+let lose=NewPhrasesArray[i].textContent-1;
 
   if (Letter[i].textContent ===NewPhrasesArray.textContent){
+    let win=NewPhrasesArray[i].textContent+1;
   overlay.classList.add('win');
-    win++;
     console.log(win);
+    checkWin('win');
+
  }
+
 }
  else
   {
 
     overlay.classList.add('lose');
-    lose--;
-  }
+    console.log('lose');
+}
 }
