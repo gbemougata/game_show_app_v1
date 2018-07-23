@@ -4,10 +4,6 @@ const qwerty =document.getElementById('qwerty');
 const phrase= document. querySelector('#phrase ul');
 const  miss= 0;
 const lives=5;
-
-
-
-//const overlay = document.getElementById('overlay');
 const startGame = document.querySelector('a.btn__reset');
 const overlay = document.getElementById('overlay');
 let phrases= ['monday','tuesday','wednesday','Thursday', 'friday.'];
@@ -16,13 +12,8 @@ let phrases= ['monday','tuesday','wednesday','Thursday', 'friday.'];
 //addEvent listener
 
 startGame.addEventListener('click', function() {
-//console.log(startGame);
-//if (startGame ===1){
-  overlay.style.display='none';
-//}else {
-  //overlay.style.display='block';
 
-//}
+  overlay.style.display='none';
 });
 
 //phrases array
@@ -41,12 +32,6 @@ getRandomPhrasesArray(getRandomPhrasesArray(phrases));
 
 function  addPhrasesDisplay(arr){
 
-    //create list item
-    //let list =document.createElement('li');
-    //const text=document.createTexteNode(arr);
-    //phrase.appendChild(list);
-    //not sure if i need to use textContent on list
-    //list.appendChild(text);
 
 let array=arr[0].split('');
 console.log(array);
@@ -73,29 +58,17 @@ console.log(array);
   addPhrasesDisplay(getRandomPhrasesArray(phrases));
 //create a check letter function
 
-
-
-//adding eventLitener to the keyboard
-
 qwerty.addEventListener('click',function(e){
   if (e.target .tagName==='BUTTON'){
     const target= e.target;
     const button=target;
-//  const keyrow=document.querySelectorAll('keyrow');
-  //window.querySelectorAll('button').disabled= false;
-
-      //const button=target;
-    //const keyrow=document.querySelectorAll('keyrow');
-    //window.querySelectorAll('button').disabled= false;
+//
 
   checkLetter(target);
 }
 });
 
 
-  //else {
-
-  //window.querySelectorAll('target').disabled=true;
 
 
 
@@ -129,20 +102,25 @@ miss++
 };
 //create checkWin function
 //
-//function checkWin(){
+function checkWin(win){
+
+  //Checks if we lost
+  if (lives == 0) {
 
 
-  //const classShow= document.getElementsByClassName('show');
-  //const classLetter=document.getElementByClass('letters');
-  //if (classShow.length ===classLetter.length){
-    //overlay.classList.add('win');
-    //win++;
-    //console.log(win);
-//  }
-//}
- //else if
-  //(missed==5){
+var NewPhrasesArray= PhrasesArray.split();
+let win=NewPhrasesArray[i].textContent;
 
-    //overlay.classList.add('lose');
-    //lose--;
-  //}
+  if (Letter[i].textContent ===NewPhrasesArray.textContent){
+  overlay.classList.add('win');
+    win++;
+    console.log(win);
+ }
+}
+ else
+  {
+
+    overlay.classList.add('lose');
+    lose--;
+  }
+}
