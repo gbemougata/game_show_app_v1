@@ -65,8 +65,20 @@ qwerty.addEventListener('click',function(e){
 //
 
   checkLetter(target);
-}
-});
+
+  if (checkLetter == null){
+      const wrong=0;
+      console.log(wrong);
+      miss++;
+      const letterFound =letter[i].textContent;
+      miss=0;
+
+        const section= document.getElementsByClassName('tries');
+    letter[i].classList.remove('tries')[0];
+    miss++
+    };
+  }
+  });
 
 
 
@@ -90,17 +102,17 @@ function checkLetter(target){
 }
 
 //missed guesses in the game
-if (checkLetter == null){
-   const wrong=0;
-   console.log(wrong);
-   miss++;
-   const letterFound =letter[i].textContent;
-   miss=0;
+//if (checkLetter == null){
+   //const wrong=0;
+   //console.log(wrong);
+   //miss++;
+   //const letterFound =letter[i].textContent;
+   //miss=0;
 
-     const section= document.getElementsByClassName('tries');
- letter[i].classList.remove('tries')[0];
- miss++
- };
+     //const section= document.getElementsByClassName('tries');
+ //letter[i].classList.remove('tries')[0];
+ //miss++
+// };
 //create checkWin function
 //
 function checkWin(win){
