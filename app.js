@@ -3,10 +3,14 @@
 const qwerty =document.getElementById('qwerty');
 const phrase= document. querySelector('#phrase ul');
 const  miss= 0;
-const lives=5;
+let tries=5;
+
 const startGame = document.querySelector('a.btn__reset');
 const overlay = document.getElementById('overlay');
-let phrases= ['monday','tuesday','wednesday','Thursday', 'friday.'];
+let phrases= ['monday','tuesday','wednesday','Thursday', 'friday'];
+let win="";
+let lose="";
+let scoreboard = document.getElementById("scoreboard");
 
 
 //addEvent listener
@@ -36,7 +40,7 @@ function  addPhrasesDisplay(arr){
 let array=arr[0].split('');
 console.log(array);
 
-
+let win=arr
 
       for ( i=0; i< array.length; i++){
 
@@ -97,47 +101,33 @@ function checkLetter(target){
     if(letter[i].textContent.toLowerCase()==btn){
       letter[i].classList.add('show');
       const letterfound=letter[i].textContent;
+      //checkWin(win);
     }
   }
 }
 
-//missed guesses in the game
-//if (checkLetter == null){
-   //const wrong=0;
-   //console.log(wrong);
-   //miss++;
-   //const letterFound =letter[i].textContent;
-   //miss=0;
 
-     //const section= document.getElementsByClassName('tries');
- //letter[i].classList.remove('tries')[0];
- //miss++
-// };
 //create checkWin function
-//
+
 function checkWin(win){
+  let luckLetter=document.getElementsByClassName("show");
+  if (luckLetter.length===win[0].length){
+    overlay.style.display='block';
+    overlay.classList.add('show');
 
-  //Checks if we lost
-  if (lives == 5) {
-
-
-var NewPhrasesArray= PhrasesArray.split();
-//let win=NewPhrasesArray[i].textContent+1;
-let lose=NewPhrasesArray[i].textContent-1;
-
-  if (Letter[i].textContent ===NewPhrasesArray.textContent){
-    let win=NewPhrasesArray[i].textContent+1;
-  overlay.classList.add('win');
-    console.log(win);
-    checkWin('win');
-
- }
-
+  }
 }
- else
-  {
+  for (i=0; i<miss.length; miss++){
+   if (miss>=5){
+// let establish relationship between miss an lose
+let lose=tries
+document.createElement("lose");
+lose.innerHtml="please try again!!"
+let section=document.getElementByclassName("section");
+//since we will thi appendChild on bottom of scorboard list
+section.appendChild("lose");
+overlay.setAttribute('class', "lose");
+console.log('lose');
 
-    overlay.classList.add('lose');
-    console.log('lose');
-}
+  }
 }
