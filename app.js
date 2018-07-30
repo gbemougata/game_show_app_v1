@@ -3,7 +3,10 @@
 const qwerty =document.getElementById('qwerty');
 const phrase= document. querySelector('#phrase ul');
 const  miss= 0;
-let tries=5;
+let tries=0;
+let lives=5;
+
+
 
 const startGame = document.querySelector('a.btn__reset');
 const overlay = document.getElementById('overlay');
@@ -101,7 +104,22 @@ function checkLetter(target){
     if(letter[i].textContent.toLowerCase()==btn){
       letter[i].classList.add('show');
       const letterfound=letter[i].textContent;
+      let match=target
       //checkWin(win);
+    }
+    {
+      if (match==null){
+        missed++;
+        if(miss>=1 && miss<=lives){
+          let lives=document.querySelector('.tries').firstChild;
+          lives.src='./Images/lostheart.png';
+          lives.parentElement.classList.add('tries');
+          lives.parentElement.classList.remove('tries');
+          if (button[i].textContent===target){
+            button[i].classList.add('miss');
+          }
+        }
+      }
     }
   }
 }
