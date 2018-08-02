@@ -2,15 +2,17 @@
 
 const qwerty =document.getElementById('qwerty');
 const phrase= document. querySelector('#phrase ul');
-const  miss= 0;
+let   miss= 0;
 let tries=0;
-let lives=5;
+let highestMissed=5;
+//const tries=document.getElementsByTagName('tries')[i];
+
 
 
 
 const startGame = document.querySelector('a.btn__reset');
 const overlay = document.getElementById('overlay');
-let phrases= ['monday','tuesday','wednesday','Thursday', 'friday'];
+let phrases= ['january','february','mars','april', 'mai'];
 let win="";
 let lose="";
 let scoreboard = document.getElementById("scoreboard");
@@ -33,7 +35,7 @@ function getRandomPhrasesArray(arr){
   return NewPhrasesArray;
 }
 
-getRandomPhrasesArray(getRandomPhrasesArray(phrases));
+
 
 //create addPhraseToDisplay function
 
@@ -62,25 +64,29 @@ let win=arr
 };
 
 
+
   addPhrasesDisplay(getRandomPhrasesArray(phrases));
 //create a check letter function
+
 
 qwerty.addEventListener('click',function(e){
   if (e.target .tagName==='BUTTON'){
     const target= e.target;
     const button=target;
-//
+
 
   checkLetter(target);
 
   if (checkLetter == null){
       const wrong=0;
       console.log(wrong);
-      miss++;
-      const letterFound =letter[i].textContent;
-      miss=0;
 
-        const section= document.getElementsByClassName('tries');
+      const letterFound =letter[i].textContent;
+
+
+        const section=document.getElementsByClassName('tries');
+        n= document.getElementsByClassName('tries');
+        //var miss=0;
     letter[i].classList.remove('tries')[0];
     miss++
     };
@@ -97,55 +103,72 @@ qwerty.addEventListener('click',function(e){
 
 function checkLetter(target){
   const foundLetter= null;
+  match=event
+
   const letter=document.getElementsByClassName('letter');
   const btn=target.textContent;
   for ( let i=0; i<letter.length; i++){
     //if matches found
     if(letter[i].textContent.toLowerCase()==btn){
       letter[i].classList.add('show');
-      const letterfound=letter[i].textContent;
-      let match=target
-      //checkWin(win);
+     const foundLetter=letter[i].textContent;
+
+
     }
-    {
-      if (match==null){
-        missed++;
-        if(miss>=1 && miss<=lives){
-          let lives=document.querySelector('.tries').firstChild;
-          lives.src='./Images/lostheart.png';
-          lives.parentElement.classList.add('tries');
-          lives.parentElement.classList.remove('tries');
-          if (button[i].textContent===target){
-            button[i].classList.add('miss');
-          }
+  }
+  //if letter not found
+  if(match===null){
+    miss++;
+    if(miss>=1 && miss<=highestMissed){
+      let lives=document.querySelector('.tries').firstChild;
+      lives.src='./images/lostHeart.png';
+      lives.parentElement.classList.add('tried');
+      lives.parentElement.classList.remove('tries');
+      for(i =0; i<button.length; i++){
+        if (button[i].textContent===event){
+          button[i].classList.add('miss');
         }
       }
     }
   }
-}
+};
+
+function CheckWin(){
+  if(document.querySelectorAll('.show').length===document.querySelectorAll('.letter').length){
+    //console.log('great job');
+    document.write('win');
+    checkWin();
+  }
+  else if (miss===highestMissed){
+    console.log('sorry, try again next time!');
+    lose();
+  }
+};
+
+
 
 
 //create checkWin function
 
-function checkWin(win){
-  let luckLetter=document.getElementsByClassName("show");
-  if (luckLetter.length===win[0].length){
-    overlay.style.display='block';
-    overlay.classList.add('show');
+//function checkWin(win){
+  //let luckLetter=document.getElementsByClassName("show");
+  //if (luckLetter.length===win[0].length){
+    //overlay.style.display='block';
+    //overlay.classList.add('show');
 
-  }
-}
-  for (i=0; i<miss.length; miss++){
-   if (miss>=5){
+  //}
+//}
+  //for (i=0; i<miss.length; miss++){
+   //if (miss>=5){
 // let establish relationship between miss an lose
-let lose=tries
-document.createElement("lose");
-lose.innerHtml="please try again!!"
-let section=document.getElementByclassName("section");
+//let lose=tries
+//document.createElement("lose");
+//lose.innerHtml="please try again!!"
+//let section=document.getElementByclassName("section");
 //since we will thi appendChild on bottom of scorboard list
-section.appendChild("lose");
-overlay.setAttribute('class', "lose");
-console.log('lose');
+//section.appendChild("lose");
+//overlay.setAttribute('class', "lose");
+//console.log('lose');
 
-  }
-}
+//  }
+//}
