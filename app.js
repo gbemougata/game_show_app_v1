@@ -85,7 +85,7 @@ qwerty.addEventListener('click',function(e){
 
 
         const section=document.getElementsByClassName('tries');
-        n= document.getElementsByClassName('tries');
+
         //var miss=0;
     letter[i].classList.remove('tries')[0];
     miss++
@@ -135,8 +135,8 @@ function checkLetter(target){
 
 function CheckWin(){
   if(document.querySelectorAll('.show').length===document.querySelectorAll('.letter').length){
-    //console.log('great job');
-    document.write('win');
+
+    console.log('win');
     checkWin();
   }
   else if (miss===highestMissed){
@@ -144,31 +144,3 @@ function CheckWin(){
     lose();
   }
 };
-
-
-
-
-//create checkWin function
-
-//function checkWin(win){
-  //let luckLetter=document.getElementsByClassName("show");
-  //if (luckLetter.length===win[0].length){
-    //overlay.style.display='block';
-    //overlay.classList.add('show');
-
-  //}
-//}
-  //for (i=0; i<miss.length; miss++){
-   //if (miss>=5){
-// let establish relationship between miss an lose
-//let lose=tries
-//document.createElement("lose");
-//lose.innerHtml="please try again!!"
-//let section=document.getElementByclassName("section");
-//since we will thi appendChild on bottom of scorboard list
-//section.appendChild("lose");
-//overlay.setAttribute('class', "lose");
-//console.log('lose');
-
-//  }
-//}
