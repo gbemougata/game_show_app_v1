@@ -73,7 +73,7 @@ qwerty.addEventListener('click',function(e){
   if (e.target .tagName==='BUTTON'){
     const target= e.target;
     const button=target;
-
+const foundLetter= checkLetter(target);
 
   checkLetter(target);
 
@@ -88,7 +88,22 @@ qwerty.addEventListener('click',function(e){
 
         //var miss=0;
     letter[i].classList.remove('tries')[0];
-    miss++
+    if(match===null){
+      miss++;
+      if(miss>=1 && miss<=highestMissed){
+        let lives=document.querySelector('.tries').firstChild;
+        lives.src='./images/lostHeart.png';
+        lives.parentElement.classList.add('tried');
+        lives.parentElement.classList.remove('tries');
+        for(i =0; i<button.length; i++){
+          if (button[i].textContent===event){
+            button[i].classList.add('miss');
+            foundLetter();
+            console.log('checkLetter');
+          }
+        }
+      }
+    }
     };
   }
   });
@@ -102,7 +117,7 @@ qwerty.addEventListener('click',function(e){
 //letter appears in a phrase
 
 function checkLetter(target){
-  const foundLetter= null;
+  let foundLetter= null;
   match=event
 
   const letter=document.getElementsByClassName('letter');
@@ -127,6 +142,7 @@ function checkLetter(target){
       for(i =0; i<button.length; i++){
         if (button[i].textContent===event){
           button[i].classList.add('miss');
+          foundLetter();
         }
       }
     }
