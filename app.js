@@ -77,7 +77,7 @@ const foundLetter= checkLetter(target);
 
   checkLetter(target);
 
-  if (checkLetter == null){
+  if (foundLetter== null){
       const wrong=0;
       console.log(wrong);
 
@@ -126,27 +126,12 @@ function checkLetter(target){
     //if matches found
     if(letter[i].textContent.toLowerCase()==btn){
       letter[i].classList.add('show');
-     const foundLetter=letter[i].textContent;
+      foundLetter=letter[i].textContent;
 
 
     }
   }
-  //if letter not found
-  if(match===null){
-    miss++;
-    if(miss>=1 && miss<=highestMissed){
-      let lives=document.querySelector('.tries').firstChild;
-      lives.src='./images/lostHeart.png';
-      lives.parentElement.classList.add('tried');
-      lives.parentElement.classList.remove('tries');
-      for(i =0; i<button.length; i++){
-        if (button[i].textContent===event){
-          button[i].classList.add('miss');
-          foundLetter();
-        }
-      }
-    }
-  }
+  return foundLetter;
 };
 
 function CheckWin(){
