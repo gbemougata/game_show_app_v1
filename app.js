@@ -110,10 +110,6 @@ const foundLetter= checkLetter(target);
 
 
 
-
-
-
-
 //letter appears in a phrase
 
 function checkLetter(target){
