@@ -16,6 +16,11 @@ let phrases= ['january','february','mars','april', 'mai'];
 let win="";
 let lose="";
 let scoreboard = document.getElementById("scoreboard");
+const mainHead = document.getElementsByClassName("title");
+const winTxt = document.createTextNode("You Win! congratulation");
+const lostTxt = document.createTextNode("Sorry you lost", "please try again");
+
+
 
 
 //addEvent listener
@@ -78,17 +83,6 @@ const foundLetter= checkLetter(target);
   checkLetter(target);
 
   if (foundLetter== null){
-      const wrong=0;
-      console.log(wrong);
-
-      const letterFound =letter[i].textContent;
-
-
-        const section=document.getElementsByClassName('tries');
-
-        //var miss=0;
-    letter[i].classList.remove('tries')[0];
-    if(match===null){
       miss++;
       if(miss>=1 && miss<=highestMissed){
         let lives=document.querySelector('.tries').firstChild;
@@ -100,10 +94,11 @@ const foundLetter= checkLetter(target);
             button[i].classList.add('miss');
             foundLetter();
             console.log('checkLetter');
+            checkWin();
           }
         }
       }
-    }
+
     };
   }
   });
@@ -131,13 +126,23 @@ function checkLetter(target){
 };
 
 function CheckWin(){
-  if(document.querySelectorAll('.show').length===document.querySelectorAll('.letter').length){
+  //append winText and loseText to the mainHead
+  mainHead.apendChild("winTxt");
+  mainHead.appendChild("loseTxt");
+  const categoryLetter=document.querySelectorAll(".letter");
+  const categoryClass=document.querySelector('.show');
 
-    console.log('win');
-    checkWin();
+  if(categoryLetter.length===categoryClass.length){
+
+    overlay.setAttribute('class','win');
+mainHead.firstChild.nodeValue = "You Won!! Play again?";
+overlay.style.display = 'none';
+
   }
-  else if (miss===highestMissed){
-    console.log('sorry, try again next time!');
-    lose();
+  else if (miss>=highestMissed){
+    overlay.setAttribute('class','lose');
+    overlay.style.display = 'none';
+    mainHead.firstChild.nodeValue = "You Lose. Try again?";
+    reset();
   }
 };
