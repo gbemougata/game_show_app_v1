@@ -16,8 +16,8 @@ let phrases= ['january','february','mars','april', 'mai'];
 let win="";
 let lose="";
 let scoreboard = document.getElementById("scoreboard");
-const mainHead = document.getElementsByClassName("title");
-const winTxt = document.createTextNode("You Win! congratulation");
+const mainHead = document.getElementsByClassName("title").value;
+const winTxt = document.createTextNode("You won! congratulation");
 const lostTxt = document.createTextNode("Sorry you lost", "please try again");
 
 
@@ -135,14 +135,14 @@ function CheckWin(){
   if(categoryLetter.length===categoryClass.length){
 
     overlay.setAttribute('class','win');
-mainHead.firstChild.nodeValue = "You Won!! Play again?";
+mainHead.firstChild.nodeValue = "You won! congratulation";
 overlay.style.display = 'none';
 
   }
   else if (miss>=highestMissed){
     overlay.setAttribute('class','lose');
     overlay.style.display = 'none';
-    mainHead.firstChild.nodeValue = "You Lose. Try again?";
+    mainHead.firstChild.nodeValue ="Sorry you lost", "please try again";
     reset();
   }
 };
