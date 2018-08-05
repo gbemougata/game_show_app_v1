@@ -78,6 +78,8 @@ qwerty.addEventListener('click',function(e){
   if (e.target .tagName==='BUTTON'){
     const target= e.target;
     const button=target;
+    button.classList.add('chosen');
+
 const foundLetter= checkLetter(target);
 
   checkLetter(target);
@@ -89,14 +91,7 @@ const foundLetter= checkLetter(target);
         lives.src='./images/lostHeart.png';
         lives.parentElement.classList.add('tried');
         lives.parentElement.classList.remove('tries');
-        for(i =0; i<button.length; i++){
-          if (button[i].textContent===event){
-            button[i].classList.add('miss');
-            foundLetter();
-            console.log('checkLetter');
-            checkWin();
-          }
-        }
+
       }
 
     };
