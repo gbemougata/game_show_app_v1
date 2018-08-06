@@ -92,6 +92,7 @@ const foundLetter= checkLetter(target);
 
     };
   }
+  checkWin();
   });
 
 
@@ -134,6 +135,5 @@ function CheckWin(){
   else if (miss>=highestMissed){
     overlay.classList.add("lose", "sorry,try again");
 
-    checkWin();
   }
 }
