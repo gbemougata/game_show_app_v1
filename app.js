@@ -15,7 +15,7 @@ const overlay = document.getElementById('overlay');
 let phrases= ['january','february','mars','april', 'mai'];
 let scoreboard = document.getElementById("scoreboard");
 const mainHead = document.getElementsByClassName("title").value;
-c
+
 
 
 
