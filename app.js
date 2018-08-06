@@ -13,13 +13,9 @@ let highestMissed=5;
 const startGame = document.querySelector('a.btn__reset');
 const overlay = document.getElementById('overlay');
 let phrases= ['january','february','mars','april', 'mai'];
-let win="";
-let lose="";
 let scoreboard = document.getElementById("scoreboard");
 const mainHead = document.getElementsByClassName("title").value;
-const winTxt = document.createTextNode("You won! congratulation");
-const lostTxt = document.createTextNode("Sorry you lost", "please try again");
-
+c
 
 
 
@@ -82,7 +78,7 @@ qwerty.addEventListener('click',function(e){
 
 const foundLetter= checkLetter(target);
 
-  checkLetter(target);
+
 
   if (foundLetter== null){
       miss++;
@@ -110,34 +106,34 @@ function checkLetter(target){
   const btn=target.textContent;
   for ( let i=0; i<letter.length; i++){
     //if matches found
-    if(letter[i].textContent.toLowerCase()==btn){
+    if(letter[i].textContent.toLowerCase()==target.textContent.toLowerCase()){
       letter[i].classList.add('show');
-      foundLetter=letter[i].textContent;
+      foundLetter=letter[i];
 
 
     }
-  }
+
+}
   return foundLetter;
 };
 
+//function used with the checkWin function
+
+
 function CheckWin(){
   //append winText and loseText to the mainHead
-  mainHead.apendChild("winTxt");
-  mainHead.appendChild("loseTxt");
-  const categoryLetter=document.querySelectorAll(".letter");
-  const categoryClass=document.querySelector('.show');
 
-  if(categoryLetter.length===categoryClass.length){
+  const letterClassShow=document.querySelectorAll(".letter");
+  const letterClassLetter=document.querySelector('.show');
 
-    overlay.setAttribute('class','win');
-mainHead.firstChild.nodeValue = "You won! congratulation";
-overlay.style.display = 'none';
+  if(letterClassShow.length===letterClassLetter.length){
+
+    overlay.classList.add("win","you did it");
 
   }
   else if (miss>=highestMissed){
-    overlay.setAttribute('class','lose');
-    overlay.style.display = 'none';
-    mainHead.firstChild.nodeValue ="Sorry you lost", "please try again";
-    reset();
+    overlay.classList.add("lose", "sorry,try again");
+
+    checkWin();
   }
-};
+}

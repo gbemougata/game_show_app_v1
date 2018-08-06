@@ -77,9 +77,19 @@ button {
 
 /* Scoreboard */
 
-.tries {
-  background-image: url('../images/liveHeart.png');
+
+  .tries>img {
+  width: 35px;
+  height: 35px;
+  padding: 5px;
 }
+
+.tried>img {
+  width: 30px;
+  height: 35px;
+  padding: 5px;
+}
+
 
 /* Phrase */
 
