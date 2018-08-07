@@ -121,19 +121,21 @@ function checkLetter(target){
 //function used with the checkWin function
 
 
-function CheckWin(){
+function checkWin( ){
   //append winText and loseText to the mainHead
 
-  const letterClassShow=document.querySelectorAll(".letter");
-  const letterClassLetter=document.querySelector('.show');
+  let letterClassShow=document.querySelectorAll(".letter");
+  let letterClassLetter=document.querySelector('.show');
 
-  if(letterClassShow.length===letterClassLetter.length){
 
-    overlay.classList.add("win","you did it");
+  if (letterClassShow.length===letterClassLetter.length ){
+    overlay.style.display= flex;
 
-  }
-  else if (miss>=highestMissed){
-    overlay.classList.add("lose", "sorry,try again");
+    startGame.className="win";
 
   }
+  else if (highestMissed==="5"){
+  startGame.className="lose";
+
+}
 }
