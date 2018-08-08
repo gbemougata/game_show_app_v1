@@ -109,8 +109,8 @@ button {
 }
 
 .show {
-  color: #000;
-  background-color: #76CE82;
+  color: gray;
+  background-color: #800000;
 }
 
 /* Keyboard */
@@ -124,7 +124,7 @@ button {
   background: var(--color-neutral);
   border-radius: 5px;
   font-size: var(--font-size-medium);
-  color: #FFFFFF;
+  color: #FF0000;
 }
 
 .btn__reset {
@@ -141,7 +141,7 @@ button {
   display: flex;
   flex-direction: column;
   position: fixed;
-  color: #FFFFFF;
+  color: #e6cdcd;
   justify-content: center;
   top: 0;
   bottom: 0;
@@ -151,7 +151,7 @@ button {
 }
 
 .title {
-  color: #FFF;
+  color: #faff67;
 }
 
 .start {
@@ -172,6 +172,7 @@ button {
 
 .lose {
   background-color: var(--color-lose);
+  
 }
 
 .lose a {

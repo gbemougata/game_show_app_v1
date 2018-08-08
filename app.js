@@ -88,11 +88,12 @@ const foundLetter= checkLetter(target);
         lives.parentElement.classList.add('tried');
         lives.parentElement.classList.remove('tries');
 
+
       }
 
     };
-  }
   checkWin();
+}
   });
 
 
@@ -129,13 +130,17 @@ function checkWin( ){
 
 
   if (letterClassShow.length===letterClassLetter.length ){
-    overlay.style.display= flex;
+    overlay.style.display= "";
 
-    startGame.className="win";
+   overlay.className="win";
+
 
   }
-  else if (highestMissed==="5"){
-  startGame.className="lose";
+  else if (miss===5){
+    var loseTxt={lose : "Sorry try again", win: "Congratulation"}
+    document.write(loseTxt.lose);
+  //overlay.className="lose";
+  //overlay.style.display="";
 
 }
 }
