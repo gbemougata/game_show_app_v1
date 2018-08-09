@@ -126,7 +126,7 @@ function checkWin( ){
   //append winText and loseText to the mainHead
 
   let letterClassShow=document.querySelectorAll(".letter");
-  let letterClassLetter=document.querySelector('.show');
+  let letterClassLetter=document.querySelectorAll('.show');
 
 
   if (letterClassShow.length===letterClassLetter.length ){
@@ -137,10 +137,9 @@ function checkWin( ){
 
   }
   else if (miss===5){
-    var loseTxt={lose : "Sorry try again", win: "Congratulation"}
-    document.write(loseTxt.lose);
-  //overlay.className="lose";
-  //overlay.style.display="";
+
+  overlay.className="lose";
+  overlay.style.display="";
 
 }
 }
