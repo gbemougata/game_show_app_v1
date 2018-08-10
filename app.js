@@ -5,6 +5,7 @@ const phrase= document. querySelector('#phrase ul');
 let   miss= 0;
 let tries=0;
 let highestMissed=5;
+
 //const tries=document.getElementsByTagName('tries')[i];
 
 
@@ -12,7 +13,7 @@ let highestMissed=5;
 
 const startGame = document.querySelector('a.btn__reset');
 const overlay = document.getElementById('overlay');
-let phrases= ['january','february','mars','april', 'mai'];
+let phrases= ['januaryhappymonth','februaryshortofcash','marscomingtogether','aprileaster', 'maiemancipationmonth'];
 let scoreboard = document.getElementById("scoreboard");
 const mainHead = document.getElementsByClassName("title").value;
 
@@ -22,12 +23,33 @@ const mainHead = document.getElementsByClassName("title").value;
 //addEvent listener
 
 startGame.addEventListener('click', function() {
+  let letters= document.getElementsByClassName("letter");
+  let space=document.getElementsByClassName("space");
+  for ( let i=letters.length-1 ; i>=0 ;  i--){
+    if (letters===""){
+
+    letters.parentNode.removeChild(letters[i]);
+  }
+
+  for (let i= space.length - 1; i>=0; i--){
+    space.parentNode.removeChild(space[i]);
+  }
 
   overlay.style.display='none';
+
+}
+
 });
 
-//phrases array
+//let's clear the keyboard
 
+let keys =document.getElementsByClassName("button");
+for (let i=0; i<keys.length; i++){
+
+  keys[i].removeAttribute("class");
+  keys[i].removeAttribute("disabled");
+
+}
 
 //get randomphrase array and use split methode on it.
 function getRandomPhrasesArray(arr){
@@ -56,7 +78,7 @@ let win=arr
         //list.appendChild(text);
 
 
-    if(array[i]===''){
+    if(arr[i]===''){
       list.className='space';
     }else {
       list.className='letter';
@@ -77,6 +99,7 @@ qwerty.addEventListener('click',function(e){
     button.classList.add('chosen');
 
 const foundLetter= checkLetter(target);
+
 
 
 
