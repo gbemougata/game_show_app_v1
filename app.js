@@ -41,15 +41,7 @@ startGame.addEventListener('click', function() {
 
 });
 
-//let's clear the keyboard
 
-let keys =document.getElementsByClassName("button");
-for (let i=0; i<keys.length; i++){
-
-  keys[i].removeAttribute("class");
-  keys[i].removeAttribute("disabled");
-
-}
 
 //get randomphrase array and use split methode on it.
 function getRandomPhrasesArray(arr){
@@ -97,7 +89,7 @@ qwerty.addEventListener('click',function(e){
     const target= e.target;
     const button=target;
     button.classList.add('chosen');
-
+button.setAttribute('disabled',true);
 const foundLetter= checkLetter(target);
 
 
@@ -125,7 +117,7 @@ const foundLetter= checkLetter(target);
 
 function checkLetter(target){
   let foundLetter= null;
-  match=event
+
 
   const letter=document.getElementsByClassName('letter');
   const btn=target.textContent;
