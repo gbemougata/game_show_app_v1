@@ -13,7 +13,7 @@ let highestMissed=5;
 
 const startGame = document.querySelector('a.btn__reset');
 const overlay = document.getElementById('overlay');
-let phrases= ['januaryhappymonth','februaryshortofcash','marscomingtogether','aprileaster', 'maiemancipationmonth'];
+let phrases= ['january happy month','february short of cash','mars coming together','april easter', 'mai emancipation month'];
 let scoreboard = document.getElementById("scoreboard");
 const mainHead = document.getElementsByClassName("title").value;
 
@@ -33,6 +33,7 @@ startGame.addEventListener('click', function() {
 
   for (let i= space.length - 1; i>=0; i--){
     space.parentNode.removeChild(space[i]);
+    var eliminateSpace=phrases.trim();
   }
 
   overlay.style.display='none';
