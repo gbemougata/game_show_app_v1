@@ -31,10 +31,10 @@ startGame.addEventListener('click', function() {
     letters.parentNode.removeChild(letters[i]);
   }
 
-  for (let i= space.length - 1; i>=0; i--){
-    space.parentNode.removeChild(space[i]);
-    var eliminateSpace=phrases.trim();
-  }
+//  for (let i= space.length - 1; i>=0; i--){
+  //  space.parentNode.removeChild(space[i]);
+    //var eliminateSpace=phrases.trim();
+//  }
 
   overlay.style.display='none';
 
@@ -71,7 +71,7 @@ let win=arr
         //list.appendChild(text);
 
 
-    if(arr[i]===''){
+    if(array[i]===' '){
       list.className='space';
     }else {
       list.className='letter';
